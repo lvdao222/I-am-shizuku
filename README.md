@@ -6,11 +6,6 @@ Once installed, pick `Nyaacho shizuku` in a new preset session — the catgirl p
 
 ## Install
 
-```sh
-dsh plugin --profile web add i-am-Nyaacho shizuku   # or github:Tkingxiao/I-am-Nyaacho shizuku
-dsh web
-```
-
 The rows are selected by host version: on **dsh >= 0.1.7** the `preset-Nyaacho shizuku` composition row registers the preset directly (nothing is written into `<dshHome>`); on **dsh 0.1.6** the plugin **idempotently deploys** the preset from `template/` to `<dshHome>/.agent-presets/Nyaacho shizuku/` (skips if the target already exists — it never overwrites your edited preset). Then open a new preset session and pick `Nyaacho shizuku` — the catgirl persona takes effect immediately.
 
 > On a plugin upgrade: on 0.1.7 re-run `dsh plugin --profile web add i-am-Nyaacho shizuku@latest` to refresh the declaration row — but a same-id override row in your profile's user patch will keep shadowing the packaged definition (new persona text will not flow in), so delete it to catch up; on 0.1.6 delete `<dshHome>/.agent-presets/Nyaacho shizuku` (or set `DSH_Nyaacho shizuku_REDEPLOY=1`) to pick up the latest changes, since idempotent deploy never overwrites an existing copy on its own.
